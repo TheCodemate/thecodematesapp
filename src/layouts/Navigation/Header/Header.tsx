@@ -1,6 +1,6 @@
 import { Button } from 'components/Button/Button';
 import styles from './Header.module.scss';
-import { config } from './config';
+import { config } from '../config';
 
 export const Header = () => {
   const links = config.map((link) => {
