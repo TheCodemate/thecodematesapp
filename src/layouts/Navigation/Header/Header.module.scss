@@ -1,46 +1,156 @@
 @use '../../../styles/variables' as var;
+@use '../../../styles/mixins' as *;
+
+$strokeHeight: 2px;
+$gapHeight: 0.3em;
+
+$hamburger-height: calc($strokeHeight * 3 + $gapHeight * 2);
+$x-height: calc($hamburger-height * 1.414213562373095);
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: var.$space-200 var.$space-400;
   box-shadow: var.$elevation-floating;
+  // width: 100%;
 }
 
 .logoContainer {
   .logo {
     font-family: var.$font-family-logo;
-    font-size: var.$font-size-600;
+    font-size: var.$font-size-400;
     color: var.$color-text-logo;
     white-space: nowrap;
+
+    @include breakpoint(large) {
+      font-size: var.$font-size-600;
+    }
+  }
+}
+
+.navigationContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 270px;
+  padding: var.$space-300;
+  background-color: var.$color-background-light;
+
+  transition: all 0.3s ease-in-out;
+  transform: translate(-100%);
+
+  & > * > button {
+    margin-bottom: var.$space-300;
+  }
+  & > * > li {
+    margin-bottom: var.$space-300;
+  }
+
+  @include breakpoint(large) {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 0;
+    transform: none;
+    transform: translate(0);
+    & * > button {
+      margin-bottom: 0;
+    }
+    & * > li {
+      margin-bottom: 0;
+    }
+  }
+
+  & .buttonContainer {
+    display: flex;
+    flex-direction: column;
+
+    & button {
+      margin-right: var.$space-200;
+    }
+
+    @include breakpoint(large) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
 .links {
   display: flex;
+  flex-direction: column;
   list-style: none;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: center;
   font-size: var.$font-size-300;
   text-transform: capitalize;
-  //   margin
   & li {
     margin-right: var.$space-500;
   }
+  @include breakpoint(large) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-.link {
-}
-
-.navigationContainer {
+.hamburgerMenuButton {
   display: flex;
-}
+  flex-direction: column;
+  gap: 0.3em;
+  width: 1.75em;
+  cursor: pointer;
 
-.buttonContainer {
-  display: flex;
-  & button {
-    margin-right: var.$space-200;
+  @include breakpoint(large) {
+    display: none;
+  }
+
+  &::before,
+  &::after,
+  & input {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    transition: all 0.2s ease-in-out;
+    transform-origin: left center;
+  }
+
+  & input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+
+  & input:checked {
+    opacity: 0;
+    width: 0;
+    transform-origin: center;
+  }
+  &:has(input:checked) + .navigationContainer {
+    transform: translateX(0);
+  }
+
+  &:has(input:checked)::after {
+    rotate: -45deg;
+    width: $x-height;
+    translate: 0 1px;
+  }
+  &:has(input:checked)::before {
+    rotate: 45deg;
+    width: $x-height;
   }
 }

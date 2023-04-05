@@ -14,8 +14,9 @@ export const Header = () => {
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
-        <p className={styles.logo}>TheCodemate's app</p>
+        <p className={styles.logo}>TheCodemate&apos;s app</p>
       </div>
+
       <nav className={styles.navigationContainer}>
         <ul className={styles.links}>{links}</ul>
         <div className={styles.buttonContainer}>
@@ -23,6 +24,10 @@ export const Header = () => {
           <Button>Sign up</Button>
         </div>
       </nav>
+
+      <label className={styles.hamburgerMenuButton}>
+        <input className={styles.lineMiddle} type="checkbox" />
+      </label>
     </div>
   );
 };
