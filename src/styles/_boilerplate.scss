@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: $font-family-default;
+  font-size: 100%;
+  color: $color-text-default;
+  font-weight: $font-weight-normal;
+}
