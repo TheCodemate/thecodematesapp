@@ -10,8 +10,8 @@ export const App: React.FC = () => {
   return (
     <>
       <Header toggleModalHandler={toggleModalHandler} />
-      <Modal toggleHandler={toggleModalHandler} isOpen={isModalOpen}>
-        <Form />
+      <Modal toggleModalHandler={toggleModalHandler} isOpen={isModalOpen}>
+        <Form toggleModalHandler={toggleModalHandler} />
       </Modal>
       <Footer />
     </>
