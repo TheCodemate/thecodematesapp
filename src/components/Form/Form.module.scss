@@ -66,10 +66,6 @@
   border-radius: var(--border-radius-input);
   padding: var(--space-200) var(--space-300);
   margin-bottom: var(--space-200);
-
-  &:focus {
-    // background-color: var(--color-input-background-focus);
-  }
 }
 
 .button {
