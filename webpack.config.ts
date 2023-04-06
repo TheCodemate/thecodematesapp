@@ -40,7 +40,7 @@ const config: CustomConfiguration = {
     modules: [path.resolve(__dirname, './src'), 'node_modules'],
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.css'],
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@pages': path.resolve(__dirname, './src/pages')
     }
   },
   module: {
