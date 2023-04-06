@@ -1,7 +1,10 @@
 import { Button } from 'components/Button/Button';
 import styles from './Header.module.scss';
 
-export const Header = () => {
+type HeaderProps = {
+  toggleModalHandler: () => void;
+};
+export const Header: React.FC<HeaderProps> = ({ toggleModalHandler }) => {
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
@@ -20,8 +23,10 @@ export const Header = () => {
           </li>
         </ul>
         <div className={styles.buttonContainer}>
-          <Button variant={'action'}>Log in</Button>
-          <Button>Sign up</Button>
+          <Button onClick={toggleModalHandler} variant={'action'}>
+            Log in
+          </Button>
+          <Button onClick={toggleModalHandler}>Sign up</Button>
         </div>
       </nav>
 
