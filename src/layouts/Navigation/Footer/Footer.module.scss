@@ -1,0 +1,23 @@
+@use '../../../styles' as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  min-width: 300px;
+  background-color: var(--color-background-light);
+}
+
+.linksList {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-400);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-100);
+
+  @include breakpoint(large) {
+    font-size: var(--font-size-200);
+  }
+}
