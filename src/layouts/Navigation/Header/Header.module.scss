@@ -13,20 +13,20 @@ $x-height: calc($hamburger-height * 1.414213562373095);
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: var.$space-200 var.$space-400;
-  box-shadow: var.$elevation-floating;
+  padding: var(--space-200) var(--space-400);
+  box-shadow: var(--elevation-floating);
   // width: 100%;
 }
 
 .logoContainer {
   .logo {
-    font-family: var.$font-family-logo;
-    font-size: var.$font-size-400;
-    color: var.$color-text-logo;
+    font-family: var(--font-family-logo);
+    font-size: var(--font-size-400);
+    color: var(--color-text-logo);
     white-space: nowrap;
 
     @include breakpoint(large) {
-      font-size: var.$font-size-600;
+      font-size: var(--font-size-600);
     }
   }
 }
@@ -39,17 +39,17 @@ $x-height: calc($hamburger-height * 1.414213562373095);
   flex-direction: column;
   height: 100vh;
   min-width: 270px;
-  padding: var.$space-300;
-  background-color: var.$color-background-light;
+  padding: var(--space-300);
+  background-color: var(--color-background-light);
 
   transition: all 0.3s ease-in-out;
   transform: translate(-100%);
 
   & > * > button {
-    margin-bottom: var.$space-300;
+    margin-bottom: var(--space-300);
   }
   & > * > li {
-    margin-bottom: var.$space-300;
+    margin-bottom: var(--space-300);
   }
 
   @include breakpoint(large) {
@@ -75,7 +75,7 @@ $x-height: calc($hamburger-height * 1.414213562373095);
     flex-direction: column;
 
     & button {
-      margin-right: var.$space-200;
+      margin-right: var(--space-200);
     }
 
     @include breakpoint(large) {
@@ -93,10 +93,10 @@ $x-height: calc($hamburger-height * 1.414213562373095);
   list-style: none;
   align-items: center;
   justify-content: center;
-  font-size: var.$font-size-300;
+  font-size: var(--font-size-300);
   text-transform: capitalize;
   & li {
-    margin-right: var.$space-500;
+    margin-right: var(--space-500);
   }
   @include breakpoint(large) {
     display: flex;

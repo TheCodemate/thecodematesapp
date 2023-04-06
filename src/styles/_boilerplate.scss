@@ -8,8 +8,8 @@
 
 html,
 body {
-  font-family: $font-family-default;
+  font-family: var(--font-family-default);
   font-size: 100%;
-  color: $color-text-default;
-  font-weight: $font-weight-normal;
+  color: var(--color-text-default);
+  font-weight: var(--font-weight-normal);
 }
