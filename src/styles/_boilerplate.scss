@@ -17,3 +17,7 @@ body {
 ul {
   list-style: none;
 }
+
+input:focus {
+  outline-color: var(--color-input-outline-focus);
+}
