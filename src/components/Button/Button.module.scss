@@ -1,0 +1,45 @@
+@use '../../styles' as *;
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  min-width: 60px;
+  flex-wrap: nowrap;
+  border: 1px solid $color-border-container;
+  border-radius: $border-radius-button;
+  padding: $space-100 $space-300;
+
+  background-color: $color-button-bg-default;
+  font-size: $font-size-300;
+  font-weight: $font-weight-bold;
+  color: $color-text-default;
+  transition: background-color 0.5s ease;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-button-bg-default-hover;
+  }
+
+  &.action {
+    border: $color-border-secondary;
+    background-color: $color-background-primary-base;
+    color: $color-text-light;
+
+    &:hover {
+      background-color: $color-button-bg-action-hover;
+    }
+  }
+
+  &.outlined {
+    color: $color-text-primary;
+    background-color: $color-background-wash-light;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

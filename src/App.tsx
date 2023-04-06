@@ -1,3 +1,8 @@
+import { Header } from 'layouts/Navigation/Header/Header';
 export const App: React.FC = () => {
-  return <div>Tailwind works!</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
