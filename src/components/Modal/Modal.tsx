@@ -2,13 +2,13 @@ import React, { ReactElement } from 'react';
 
 import styles from './Modal.module.scss';
 
-type ModalProps = {
+type Props = {
   children?: ReactElement | ReactElement[];
   isOpen: boolean;
   toggleModalHandler: () => void;
 };
 
-export const Modal: React.FC<ModalProps> = ({ isOpen, children, toggleModalHandler }) => {
+export const Modal = ({ isOpen, children, toggleModalHandler }: Props) => {
   if (!isOpen) {
     return null;
   }

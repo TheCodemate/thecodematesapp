@@ -4,7 +4,7 @@ import { Modal } from 'components/Modal/Modal';
 import { Form } from 'components/Form/Form';
 import { useModal } from 'components/Modal/hooks';
 
-export const App: React.FC = () => {
+export const App = () => {
   const { isModalOpen, toggleModalHandler } = useModal();
 
   return (
