@@ -1,4 +1,3 @@
-import { Button } from 'components/Button/Button';
 import styles from './Header.module.scss';
 import { Logo } from './Logo/Logo';
 import { MenuDesktop } from './MenuDesktop/MenuDesktop';
