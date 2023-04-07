@@ -3,10 +3,11 @@ import { Logo } from './Logo/Logo';
 import { MenuDesktop } from './MenuDesktop/MenuDesktop';
 import { MenuMobile } from './MenuMobile/MenuMobile';
 
-type HeaderProps = {
+type Props = {
   toggleModalHandler: () => void;
 };
-export const Header: React.FC<HeaderProps> = ({ toggleModalHandler }) => {
+
+export const Header = ({ toggleModalHandler }: Props) => {
   return (
     <div className={styles.container}>
       <Logo />

@@ -5,6 +5,7 @@ $strokeHeight: 2px;
 $gapHeight: 0.3em;
 
 $hamburger-height: calc($strokeHeight * 3 + $gapHeight * 2);
+//diagonal calculation basic on mathematical theory
 $x-height: calc($hamburger-height * 1.414213562373095);
 
 .sidebar {
@@ -23,6 +24,10 @@ $x-height: calc($hamburger-height * 1.414213562373095);
   transform: translate(-100%);
 
   box-shadow: var(--elevation-floating);
+
+  &.active {
+    transform: translate(0);
+  }
 
   @include breakpoint(large) {
     display: none;
@@ -66,9 +71,9 @@ $x-height: calc($hamburger-height * 1.414213562373095);
     display: none;
   }
 
-  &:has(input:checked) + .sidebar {
-    transform: translate(0);
-  }
+  // &:has(input:checked) + .sidebar {
+  //   transform: translate(0);
+  // }
 
   &::before,
   &::after,
