@@ -5,7 +5,7 @@ import * as z from 'zod';
 
 import styles from './Form.module.scss';
 
-type FormProps = {
+type Props = {
   toggleModalHandler: () => void;
 };
 
@@ -22,7 +22,7 @@ const formConfig = {
   resolver: zodResolver(schema)
 };
 
-export const Form: React.FC<FormProps> = ({ toggleModalHandler }) => {
+export const Form = ({ toggleModalHandler }: Props) => {
   const { register, handleSubmit } = useForm(formConfig);
 
   const onSubmitHandler = (data: FieldValues) => {
@@ -67,13 +67,13 @@ export const Form: React.FC<FormProps> = ({ toggleModalHandler }) => {
               placeholder="Password"
               required
             />
-            <label className={styles.label} htmlFor="password">
-              <a className={styles.link} href="https://www.google.pl">
-                Did you forget your password?
-              </a>
-            </label>
+            <a className={styles.link} href="https://www.google.pl">
+              Did you forget your password?
+            </a>
           </div>
-          <input className={`${styles.button} ${styles.action}`} type="submit" value="Log in" />
+          <button className={`${styles.button} ${styles.action}`} type={'submit'}>
+            Log in
+          </button>
         </form>
         <div className={styles.separator}>OR</div>
         <input className={`${styles.button} ${styles.facebook}`} type="submit" value="Facebook" />
