@@ -1,5 +1,9 @@
-import styles from './Content.module.scss';
+import { Home } from 'pages/Home/Home';
 
 export const Content = () => {
-  return <div className={styles.container}>Content</div>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 };
