@@ -9,7 +9,7 @@
 html,
 body {
   font-family: var(--font-family-default);
-  font-size: 100%;
+  font-size: calc(1rem + 0.390625vw);
   color: var(--color-text-default);
   font-weight: var(--font-weight-normal);
 }
