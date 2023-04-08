@@ -1,9 +1,18 @@
 import { Footer } from 'layouts/Navigation/Footer/Footer';
 import { Header } from 'layouts/Navigation/Header/Header';
-export const App: React.FC = () => {
+import { Modal } from 'components/Modal/Modal';
+import { Form } from 'components/Form/Form';
+import { useModal } from 'components/Modal/hooks';
+
+export const App = () => {
+  const { isModalOpen, toggleModalHandler } = useModal();
+
   return (
     <>
-      <Header />
+      <Header toggleModalHandler={toggleModalHandler} />
+      <Modal toggleModalHandler={toggleModalHandler} isOpen={isModalOpen}>
+        <Form toggleModalHandler={toggleModalHandler} />
+      </Modal>
       <Footer />
     </>
   );

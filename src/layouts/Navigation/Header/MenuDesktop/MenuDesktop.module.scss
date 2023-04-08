@@ -1,0 +1,40 @@
+@use '../../../../styles/variables' as var;
+@use '../../../../styles/mixins' as *;
+
+.navigationContainer {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 0;
+  background-color: var(--color-background-light);
+
+  @include breakpoint(large) {
+    display: flex;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-200);
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-300);
+  text-transform: capitalize;
+  & li {
+    margin-right: var(--space-500);
+  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

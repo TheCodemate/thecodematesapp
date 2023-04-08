@@ -1,33 +1,18 @@
-import { Button } from 'components/Button/Button';
 import styles from './Header.module.scss';
+import { Logo } from './Logo/Logo';
+import { MenuDesktop } from './MenuDesktop/MenuDesktop';
+import { MenuMobile } from './MenuMobile/MenuMobile';
 
-export const Header = () => {
+type Props = {
+  toggleModalHandler: () => void;
+};
+
+export const Header = ({ toggleModalHandler }: Props) => {
   return (
     <div className={styles.container}>
-      <div className={styles.logoContainer}>
-        <p className={styles.logo}>TheCodemate&apos;s app</p>
-      </div>
-
-      <nav className={styles.navigationContainer}>
-        <ul className={styles.links}>
-          <li>
-            {/* needs to be changed when react-router-dom will be implemented */}
-            <p>About</p>
-          </li>
-          <li>
-            {/* needs to be changed when react-router-dom will be implemented */}
-            <p>Blog</p>
-          </li>
-        </ul>
-        <div className={styles.buttonContainer}>
-          <Button variant={'action'}>Log in</Button>
-          <Button>Sign up</Button>
-        </div>
-      </nav>
-
-      <label className={styles.hamburgerMenuButton}>
-        <input className={styles.lineMiddle} type="checkbox" />
-      </label>
+      <Logo />
+      <MenuDesktop toggleModalHandler={toggleModalHandler} />
+      <MenuMobile toggleModalHandler={toggleModalHandler} />
     </div>
   );
 };

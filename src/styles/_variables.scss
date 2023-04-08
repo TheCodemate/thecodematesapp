@@ -37,6 +37,9 @@
   --g-colorTransparentGray100: rgb(0 0 0/0.1);
   --g-colorTransparentGray500: rgb(0 0 0/0.1);
   --g-colorTransparentGray800: rgb(0 0 0/0.8);
+  --g-border-width: 1px;
+  --g-border-width-xl: 2px;
+  --g-ncols: 12;
 
   --font-family-logo: 'Lobster', cursive;
   --font-family-default: 'Roboto', sans-serif;
@@ -73,7 +76,24 @@
   --opacity-100: 0.04;
   --opacity-0: 0;
 
-  --border-radius-button: 1.25em;
+  --border-radius-600: 4rem; //64px;
+  --border-radius-500: 2rem; //32px;
+  --border-radius-400: 1.5rem; //24px;;
+  --border-radius-350: 1.25rem;
+  --border-radius-300: 1rem; //16px;;
+  --border-radius-200: 0.5rem; //8px;
+  --border-radius-150: 0.25rem; //4px;
+
+  --min-height-element: 3em;
+
+  --border-radius-button: var(--border-radius-350);
+
+  //form
+  --border-radius-form: var(--border-radius-500);
+  --border-radius-input: var(--border-radius-300);
+  --border-input: var(--g-border-width-xl) solid var(--color-border-container);
+  --color-input-background-focus: var(--color-blue-skycicle-100);
+  --color-input-outline-focus: var(--color-blue-skycicle-100)
 
   --font-family-code: SFMono-Medium, 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Ubuntu Mono', Menlo,
     Consolas, Courier, monospace;
@@ -89,6 +109,8 @@
   --elevation-raised-bottom: 0 -2px 8px rgba(0, 0, 0, 0.12);
   --elevation-raised-top: 0 2px 8px rgba(0, 0, 0, 0.12);
   --elevation-floating: 0 0 8px rgba(0, 0, 0, 0.1);
+
+  --transition-default: all 0.5s ease;
 
   //color-pallet
   --color-data-visualization-09: #f2681f;
@@ -234,8 +256,11 @@
   --color-button-bg-default-hover: var(--color-gray-roboflow-500);
   --color-button-bg-action: var(--color-red-pushpin-450);
   --color-button-bg-action-hover: var(--color-red-pushpin-700);
+  --color-button-bg-facebook: var(--color-blue-skycicle-600);
+  --color-button-bg-facebook-hover: var(--color-blue-skycicle-700);
 
   //color-background
+  --color-background-dimmed: var(--g-colorTransparentDarkGray);
   --color-background-elevation-accent: var(--color-gray-roboflow-100);
   --color-background-light: var(--color-white-mochimalist-0);
   --color-background-dark: var(--color-black-cosmicore-900);
@@ -295,4 +320,7 @@
   --color-text-subtle: var(--color-gray-roboflow-550);
   --color-text-default: var(--color-black-cosmicore-900);
   --color-text-logo: var(--g-colorRed100);
+
+  //z-index
+  --z-index-form: 100;
 }
