@@ -55,6 +55,13 @@
   --font-size-200: 0.875rem; //14px;
   --font-size-100: 0.75rem; //12px;
 
+  --heading-size-100: 1.35rem;
+  --heading-size-200: 1.575rem;
+  --heading-size-300: 1.8rem;
+  --heading-size-400: 2.25rem;
+  --heading-size-500: 3.15rem;
+  --heading-size-600: 4.05rem;
+
   --space-negative-600: -4em; //-64px;
   --space-negative-500: -2em; //-32px;
   --space-negative-400: -1.5em; //-24px;
@@ -323,4 +330,6 @@
 
   //z-index
   --z-index-form: 100;
+
+  --header-height: 80px;
 }
