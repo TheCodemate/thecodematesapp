@@ -1,7 +1,7 @@
-import styles from './Header.module.scss';
 import { Logo } from './Logo/Logo';
 import { MenuDesktop } from './MenuDesktop/MenuDesktop';
 import { MenuMobile } from './MenuMobile/MenuMobile';
+import styles from './Header.module.scss';
 
 type Props = {
   toggleModalHandler: () => void;
