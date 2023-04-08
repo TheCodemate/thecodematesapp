@@ -40,7 +40,7 @@ export const Form = ({ toggleModalHandler }: Props) => {
         <p className={styles.logo}>A</p>
       </div>
       <h3 className={styles.heading}>Welcome to Adoptme 😻</h3>
-      <div className="formWrapper">
+      <div className={styles.formWrapper}>
         <form className={styles.form} method="post" onSubmit={handleSubmit(onSubmitHandler)}>
           <div className={styles.inputContainer}>
             <label className={styles.label} htmlFor="email">
@@ -76,7 +76,9 @@ export const Form = ({ toggleModalHandler }: Props) => {
           </button>
         </form>
         <div className={styles.separator}>OR</div>
-        <input className={`${styles.button} ${styles.facebook}`} type="submit" value="Facebook" />
+        <button className={`${styles.button} ${styles.facebook}`} value="Facebook">
+          Facebook
+        </button>
       </div>
     </div>
   );
