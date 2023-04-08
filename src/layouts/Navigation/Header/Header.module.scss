@@ -2,12 +2,12 @@
 @use '../../../styles/mixins' as *;
 
 .container {
-  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   min-width: 340px;
+  height: var(--header-height);
   padding: var(--space-200) var(--space-400);
   box-shadow: var(--elevation-floating);
 }
