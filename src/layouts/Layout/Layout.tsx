@@ -18,7 +18,7 @@ export const Layout = () => {
       <Modal toggleModalHandler={toggleModalHandler} isOpen={isModalOpen}>
         <Form toggleModalHandler={toggleModalHandler} />
       </Modal>
-      <Content />
+      <Content toggleModalHandler={toggleModalHandler} />
       <Footer />
     </div>
   );

@@ -1,9 +1,9 @@
 import { Home } from 'pages/Home/Home';
 
-export const Content = () => {
-  return (
-    <div>
-      <Home />
-    </div>
-  );
+type Props = {
+  toggleModalHandler: () => void;
+};
+
+export const Content = ({ toggleModalHandler }: Props) => {
+  return <Home toggleModalHandler={toggleModalHandler} />;
 };
