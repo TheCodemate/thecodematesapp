@@ -7,6 +7,7 @@ import styles from './Form.module.scss';
 
 type Props = {
   toggleModalHandler: () => void;
+  showCloseButton: boolean;
 };
 
 const schema = z.object({
@@ -22,7 +23,7 @@ const formConfig = {
   resolver: zodResolver(schema)
 };
 
-export const Form = ({ toggleModalHandler }: Props) => {
+export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
   const { register, handleSubmit } = useForm(formConfig);
 
   const onSubmitHandler = (data: FieldValues) => {
@@ -34,7 +35,7 @@ export const Form = ({ toggleModalHandler }: Props) => {
       className={styles.container}
       //on click has to be added to prevent eventPropagation (bubbling). If not present clicking on any Component's element will close the modal
       onClick={(e: SyntheticEvent<HTMLDivElement>) => e.stopPropagation()}>
-      <div onClick={toggleModalHandler} className={styles.close}></div>
+      {showCloseButton ? <div onClick={toggleModalHandler} className={styles.close}></div> : null}
 
       <div className={styles.logoContainer}>
         <p className={styles.logo}>A</p>
