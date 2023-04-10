@@ -7,7 +7,7 @@ import styles from './Form.module.scss';
 
 type Props = {
   toggleModalHandler: () => void;
-  showCloseButton: boolean;
+  showCloseButton?: boolean;
 };
 
 const schema = z.object({
