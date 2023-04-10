@@ -9,7 +9,7 @@ $hamburger-height: calc($strokeHeight * 3 + $gapHeight * 2);
 $x-height: calc($hamburger-height * 1.414213562373095);
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
