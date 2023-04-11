@@ -1,6 +1,6 @@
 import styles from './Home.module.scss';
 import dog from '../../assets/images/dog-small.jpg';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { ExpandMore } from '@mui/icons-material';
 import { Form } from 'components/Form/Form';
 
 type Props = {
@@ -22,7 +22,7 @@ export const Home = ({ toggleModalHandler }: Props) => {
         <div className={styles.guidlinesWrapper}>
           <a href="#start">
             <div className={styles.circle}>
-              <ExpandMoreIcon sx={{ color: 'var(--color-text-icon-light)' }} />
+              <ExpandMore sx={{ color: 'var(--color-text-icon-light)' }} />
             </div>
           </a>
           <div className={styles.guidline}>Check woof to do to adopt me!</div>
