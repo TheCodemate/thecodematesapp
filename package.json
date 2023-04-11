@@ -4,17 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --hot --mode development",
-    "build": "webpack --mode production"
+    "start": "NODE_ENV=development webpack serve --hot --mode development",
+    "build": "NODE_ENV=production webpack --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
     "@hookform/resolvers": "^3.0.1",
-    "@mui/icons-material": "^5.11.16",
     "@reduxjs/toolkit": "^1.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -46,7 +43,6 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
-    "file-loader": "^6.2.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.5",
@@ -55,7 +51,6 @@
     "sass-loader": "^13.2.1",
     "style-loader": "^3.3.2",
     "typescript-plugin-css-modules": "^5.0.0",
-    "url-loader": "^4.1.1",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
