@@ -8,7 +8,7 @@ export default defineConfig({
   publicDir: './public',
   build: {
     // Relative to the root
-    outDir: './build'
+    outDir: '../dist'
   },
   plugins: [
     createHtmlPlugin({
