@@ -1,11 +1,11 @@
-import { useModal } from 'components/Modal/hooks';
+import { useModal } from '@components/Modal/hooks';
 
-import { Modal } from 'components/Modal/Modal';
-import { Form } from 'components/Form/Form';
+import { Modal } from '@components/Modal/Modal';
+import { Form } from '@components/Form/Form';
 
-import { Footer } from 'layouts/Navigation/Footer/Footer';
-import { Header } from 'layouts/Navigation/Header/Header';
-import { Content } from 'layouts/Content/Content';
+import { Footer } from '@layouts/Navigation/Footer/Footer';
+import { Header } from '@layouts/Navigation/Header/Header';
+import { Content } from '@layouts/Content/Content';
 
 import styles from './Layout.module.scss';
 

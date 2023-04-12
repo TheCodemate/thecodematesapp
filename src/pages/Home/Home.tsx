@@ -1,7 +1,7 @@
 import styles from './Home.module.scss';
 import dog from '../../assets/images/dog-small.jpg';
 import { ExpandMore } from '@mui/icons-material';
-import { Form } from 'components/Form/Form';
+import { Form } from '@components/Form/Form';
 
 type Props = {
   toggleModalHandler: () => void;
