@@ -3,6 +3,10 @@
 :root {
   --guidlines-wrapper: 3em;
   --guidlines-height: auto;
+  --section-two-bg-color: #f2cc8f;
+  --section-two-txt-color: #e07a5f;
+  --section-three-bg-color: #404e7c;
+  --section-three-txt-color: #251f47;
 }
 
 .content {
@@ -93,8 +97,8 @@
 .two {
   display: flex;
   height: auto;
-  background-color: red;
-  color: #e07a5f;
+  background-color: var(--section-two-bg-color);
+  color: var(--section-two-txt-color);
 }
 
 .emoji {
@@ -121,8 +125,8 @@
 
 .three {
   height: auto;
-  background-color: #404e7c;
-  color: #251f47;
+  background-color: var(--section-three-bg-color);
+  color: var(--section-three-txt-color);
 }
 
 .four {
