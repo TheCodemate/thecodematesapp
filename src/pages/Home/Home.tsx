@@ -12,11 +12,11 @@ type Props = {
 export const Home = ({ toggleModalHandler }: Props) => {
   return (
     <main className={styles.content}>
-      <section className={styles.heroSection}>
+      <section className={styles.heroSection} aria-labelledby="pets-looking-for-home-heading">
         <div className={styles.heroWrapper}>
           <div className={styles.left}></div>
           <div className={styles.right}>
-            <h1 className={styles.header}>
+            <h1 className={styles.header} id="pets-looking-for-home-heading">
               There are hundreds <TextEmoji> 💯 </TextEmoji> of pets <TextEmoji>🐶🐱</TextEmoji>
               looking for their lovely home <TextEmoji>🏠❤️</TextEmoji>
             </h1>
@@ -32,25 +32,34 @@ export const Home = ({ toggleModalHandler }: Props) => {
         </div>
       </section>
 
-      <section id="start" className={`${styles.section} ${styles.two}`}>
+      <section
+        aria-labelledby="help-them-find-place-heading"
+        className={`${styles.section} ${styles.two}`}>
         <div className={styles.info}>
           <TextEmoji className={styles.emoji}>💡</TextEmoji>
-          <p className={styles.infoParagraph}>You can help them to find their place on earth!</p>
+          <h2 id="help-them-find-place-heading" className={styles.infoParagraph}>
+            You can help them to find their place on earth!
+          </h2>
           <p className={styles.questionParagraph}>Woof to find out how? - scroll down... </p>
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.three}`}>
+      <section
+        aria-labelledby="last-step-to-adopt-heading"
+        className={`${styles.section} ${styles.three}`}>
         <div className={styles.info}>
-          <p className={styles.infoParagraph}>
+          <h2 id="last-step-to-adopt-heading" className={styles.infoParagraph}>
             Take the last step and register to adopt one of homless pets
-          </p>
+          </h2>
           <p className={styles.questionParagraph}>Just one more woof... sorry, scroll </p>
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.four}`}>
+      <section aria-labelledby="fill-form-heading" className={`${styles.section} ${styles.four}`}>
         <div className={styles.contentWrapper}>
+          <h2 id="fill-form-heading" className={styles.infoParagraph}>
+            Fill the form and help them out!
+          </h2>
           <Form showCloseButton={false} toggleModalHandler={toggleModalHandler} />
         </div>
       </section>
