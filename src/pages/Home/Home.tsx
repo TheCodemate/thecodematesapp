@@ -1,8 +1,10 @@
-import styles from './Home.module.scss';
-import dog from '../../assets/images/dog-small.jpg';
 import { ExpandMore } from '@mui/icons-material';
 import { Form } from '@components/Form/Form';
+import { TextEmoji } from '@components/TextEmoji/TextEmoji';
 
+import dog from '@assets/images/dog-small.jpg';
+
+import styles from './Home.module.scss';
 type Props = {
   toggleModalHandler: () => void;
 };
@@ -15,7 +17,8 @@ export const Home = ({ toggleModalHandler }: Props) => {
           <div className={styles.left}></div>
           <div className={styles.right}>
             <h1 className={styles.header}>
-              There are hundreds 💯 of pets 🐶🐱 looking for their lovely home 🏠❤️
+              There are hundreds <TextEmoji> 💯 </TextEmoji> of pets <TextEmoji>🐶🐱</TextEmoji>
+              looking for their lovely home <TextEmoji>🏠❤️</TextEmoji>
             </h1>
           </div>
         </div>
@@ -31,7 +34,7 @@ export const Home = ({ toggleModalHandler }: Props) => {
 
       <section id="start" className={`${styles.section} ${styles.two}`}>
         <div className={styles.info}>
-          <p className={styles.emoji}>💡</p>
+          <TextEmoji className={styles.emoji}>💡</TextEmoji>
           <p className={styles.infoParagraph}>You can help them to find their place on earth!</p>
           <p className={styles.questionParagraph}>Woof to find out how? - scroll down... </p>
         </div>

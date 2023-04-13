@@ -1,9 +1,10 @@
-import React, { SyntheticEvent } from 'react';
+import { SyntheticEvent } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
 import styles from './Form.module.scss';
+import { TextEmoji } from '../TextEmoji/TextEmoji';
 
 type Props = {
   toggleModalHandler: () => void;
@@ -40,7 +41,9 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
       <div className={styles.logoContainer}>
         <p className={styles.logo}>A</p>
       </div>
-      <h3 className={styles.heading}>Welcome to Adoptme 😻</h3>
+      <h3 className={styles.heading}>
+        Welcome to Adoptme <TextEmoji>😻</TextEmoji>
+      </h3>
       <div className={styles.formWrapper}>
         <form className={styles.form} method="post" onSubmit={handleSubmit(onSubmitHandler)}>
           <div className={styles.inputContainer}>
@@ -50,6 +53,7 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
             <input
               {...register('email', { required: true })}
               className={styles.input}
+              id="email"
               type="email"
               name="email"
               placeholder="Email"
@@ -63,6 +67,7 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
             <input
               {...register('password', { required: true })}
               className={styles.input}
+              id="password"
               type="password"
               name="password"
               placeholder="Password"
@@ -77,9 +82,7 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
           </button>
         </form>
         <div className={styles.separator}>OR</div>
-        <button className={`${styles.button} ${styles.facebook}`} value="Facebook">
-          Facebook
-        </button>
+        <button className={`${styles.button} ${styles.facebook}`}>Continue with Facebook</button>
       </div>
     </div>
   );
