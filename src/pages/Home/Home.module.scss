@@ -16,11 +16,11 @@
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  &:last-child {
-    max-height: calc(100vh - var(--footer-height));
-  }
 }
 
+.content:last-child {
+  max-height: calc(100vh - var(--footer-height));
+}
 .section {
   display: flex;
   flex-direction: column;
@@ -47,9 +47,10 @@
 .left {
   display: flex;
   flex-direction: column;
-  .image {
-    object-fit: cover;
-  }
+}
+
+.image {
+  object-fit: cover;
 }
 
 .header {
@@ -132,11 +133,11 @@
 .four {
   flex: 1;
   display: flex;
+}
 
-  .contentWrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
