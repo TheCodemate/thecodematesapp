@@ -1,0 +1,135 @@
+@use '../../styles' as *;
+
+:root {
+  --guidlines-wrapper: 3em;
+  --guidlines-height: auto;
+  --section-two-bg-color: #f2cc8f;
+  --section-two-txt-color: #e07a5f;
+  --section-three-bg-color: #404e7c;
+  --section-three-txt-color: #251f47;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - var(--header-height));
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding: var(--space-400);
+  min-height: calc(100vh - var(--header-height));
+}
+
+.heroSection {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding: 0;
+  // height: 100%;
+}
+
+.heroWrapper {
+  flex: 1;
+  display: flex;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.header {
+  text-align: center;
+  font-size: var(--heading-size-500);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guidlinesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-200);
+  background-color: #f2cc8f;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-text-logo);
+  border-radius: calc(infinity * 1px);
+  animation: upAndDown 2s ease-in-out infinite;
+
+  @keyframes upAndDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+.two {
+  display: flex;
+  background-color: var(--section-two-bg-color);
+  color: var(--section-two-txt-color);
+}
+
+.emoji {
+  font-size: var(--font-size-600);
+}
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoParagraph {
+  font-size: var(--font-size-600);
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-400);
+}
+
+.questionParagraph {
+  text-align: center;
+}
+
+.three {
+  background-color: var(--section-three-bg-color);
+  color: var(--section-three-txt-color);
+}
+
+.four {
+  padding: 0;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

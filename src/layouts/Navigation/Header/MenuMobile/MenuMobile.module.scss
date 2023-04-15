@@ -9,7 +9,7 @@ $hamburger-height: calc($strokeHeight * 3 + $gapHeight * 2);
 $x-height: calc($hamburger-height * 1.414213562373095);
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -52,7 +52,7 @@ $x-height: calc($hamburger-height * 1.414213562373095);
   list-style: none;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-300);
+  font-size: var(--font-size-200);
   text-transform: capitalize;
 }
 
@@ -123,6 +123,7 @@ $x-height: calc($hamburger-height * 1.414213562373095);
   text-decoration: none;
   color: var(--color-text-default);
   font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-100);
 
   &:active {
     color: var(--color-text-default);

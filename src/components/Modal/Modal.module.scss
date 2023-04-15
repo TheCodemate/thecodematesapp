@@ -1,5 +1,6 @@
 .container {
-  position: absolute;
+  z-index: var(--z-index-modal);
+  position: fixed;
   top: 0;
   left: 0;
 

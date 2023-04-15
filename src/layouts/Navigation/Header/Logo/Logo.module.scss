@@ -6,9 +6,5 @@
     font-size: var(--font-size-400);
     color: var(--color-text-logo);
     white-space: nowrap;
-
-    @include breakpoint(large) {
-      font-size: var(--font-size-600);
-    }
   }
 }
