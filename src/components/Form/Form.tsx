@@ -1,4 +1,5 @@
 import { SyntheticEvent } from 'react';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import { FieldValues, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -81,9 +82,32 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
             Log in
           </button>
         </form>
-        <div className={styles.separator}>OR</div>
-        <button className={`${styles.button} ${styles.facebook}`}>Continue with Facebook</button>
+        <span className={styles.textSeparator}>OR</span>
+        <button className={`${styles.button} ${styles.facebook}`}>
+          <FacebookIcon sx={{ marginRight: 1 }} />
+          Continue with Facebook
+        </button>
       </div>
+      <div className={styles.lineSeparator}></div>
+      <footer className={styles.formFooter}>
+        <p className={styles.textRegister}>
+          Not an user yet?{' '}
+          <a className={styles.link} href="#">
+            <span>Register</span>
+          </a>{' '}
+          your account now!
+        </p>
+        <p className={styles.textRegister}>
+          You can find out more about our policy reading{' '}
+          <a className={styles.link} href="#">
+            <span>Terms of Service</span>
+          </a>{' '}
+          and{' '}
+          <a className={styles.link} href="#">
+            <span>Privacy policy</span>
+          </a>
+        </p>
+      </footer>
     </div>
   );
 };
