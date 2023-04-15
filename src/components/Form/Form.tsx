@@ -1,11 +1,12 @@
 import { SyntheticEvent } from 'react';
+import * as z from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { FieldValues, useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
+import { NavLinkWrapper } from '../NavLinkWrapper/NavLinkWrapper';
+import { TextEmoji } from '../TextEmoji/TextEmoji';
 
 import styles from './Form.module.scss';
-import { TextEmoji } from '../TextEmoji/TextEmoji';
 
 type Props = {
   toggleModalHandler: () => void;
@@ -99,13 +100,13 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
         </p>
         <p className={styles.textRegister}>
           You can find out more about our policy reading{' '}
-          <a className={styles.link} href="#">
-            <span>Terms of Service</span>
-          </a>{' '}
+          <NavLinkWrapper to={'/terms-of-service'}>
+            <span className={styles.span}>Terms of service</span>
+          </NavLinkWrapper>{' '}
           and{' '}
-          <a className={styles.link} href="#">
-            <span>Privacy policy</span>
-          </a>
+          <NavLinkWrapper to={'/privacy-policy'}>
+            <span className={styles.span}>Privacy Policy</span>
+          </NavLinkWrapper>
         </p>
       </footer>
     </div>
