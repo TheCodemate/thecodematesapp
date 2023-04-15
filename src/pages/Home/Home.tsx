@@ -1,6 +1,7 @@
 import { ExpandMore } from '@mui/icons-material';
 import { Form } from '@components/Form/Form';
 import { TextEmoji } from '@components/TextEmoji/TextEmoji';
+import { Footer } from '@layouts/Navigation/Footer/Footer';
 
 import dog from '@assets/images/dog-small.jpg';
 
@@ -12,7 +13,9 @@ type Props = {
 export const Home = ({ toggleModalHandler }: Props) => {
   return (
     <main className={styles.content}>
-      <section className={styles.heroSection} aria-labelledby="pets-looking-for-home-heading">
+      <section
+        className={`${styles.section} ${styles.heroSection}`}
+        aria-labelledby="pets-looking-for-home-heading">
         <div className={styles.heroWrapper}>
           <div className={styles.left}></div>
           <div className={styles.right}>
@@ -33,6 +36,7 @@ export const Home = ({ toggleModalHandler }: Props) => {
       </section>
 
       <section
+        id="start"
         aria-labelledby="help-them-find-place-heading"
         className={`${styles.section} ${styles.two}`}>
         <div className={styles.info}>
@@ -62,6 +66,7 @@ export const Home = ({ toggleModalHandler }: Props) => {
           </h2>
           <Form showCloseButton={false} toggleModalHandler={toggleModalHandler} />
         </div>
+        <Footer />
       </section>
     </main>
   );
