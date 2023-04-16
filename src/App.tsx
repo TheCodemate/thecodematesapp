@@ -1,19 +1,19 @@
 import { Layout } from '@layouts/Layout/Layout';
-import { Header } from '@layouts/Navigation/Header/Header';
-import { Content } from '@layouts/Content/Content';
-import { Modal } from '@components/Modal/Modal';
-import { Form } from '@components/Form/Form';
-import { useModal } from '@components/Modal/hooks';
+import { Route, Routes } from 'react-router';
+import { Home } from './pages/Home/Home';
+import { TermsOfService } from './pages/TermsOfService/TermsOfService';
+import { PrivacyPolicy } from './pages/PrivacyPolicy/PrivacyPolicy';
+import { NotFound } from './pages/NotFoundPage/NotFoundPage';
 
 export const App = () => {
-  const { isModalOpen, toggleModalHandler } = useModal();
   return (
-    <Layout isFooterVisible={false}>
-      <Header toggleModalHandler={toggleModalHandler} />
-      <Modal toggleModalHandler={toggleModalHandler} isOpen={isModalOpen}>
-        <Form toggleModalHandler={toggleModalHandler} />
-      </Modal>
-      <Content toggleModalHandler={toggleModalHandler} />
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 };
