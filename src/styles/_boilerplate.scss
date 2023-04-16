@@ -21,3 +21,11 @@ ul {
 input:focus {
   outline-color: var(--color-input-outline-focus);
 }
+
+a {
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
