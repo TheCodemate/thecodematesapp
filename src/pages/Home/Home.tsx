@@ -1,16 +1,14 @@
 import { ExpandMore } from '@mui/icons-material';
 import { Form } from '@components/Form/Form';
 import { TextEmoji } from '@components/TextEmoji/TextEmoji';
-import { Footer } from '@layouts/Navigation/Footer/Footer';
+import { useModalContext } from '@layouts/Layout/Layout';
 
 import dog from '@assets/images/dog-small.jpg';
 
 import styles from './Home.module.scss';
-type Props = {
-  toggleModalHandler: () => void;
-};
 
-export const Home = ({ toggleModalHandler }: Props) => {
+export const Home = () => {
+  const { toggleModalHandler } = useModalContext();
   return (
     <main className={styles.content}>
       <section
@@ -66,7 +64,6 @@ export const Home = ({ toggleModalHandler }: Props) => {
           </h2>
           <Form showCloseButton={false} toggleModalHandler={toggleModalHandler} />
         </div>
-        <Footer />
       </section>
     </main>
   );
