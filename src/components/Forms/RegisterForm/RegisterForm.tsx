@@ -1,36 +1,61 @@
-import { SyntheticEvent } from 'react';
+import { Dispatch, SetStateAction, SyntheticEvent, useState } from 'react';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { FieldValues, useForm } from 'react-hook-form';
 import { NavLinkWrapper } from '../../NavLinkWrapper/NavLinkWrapper';
 import { TextEmoji } from '../../TextEmoji/TextEmoji';
+import { ErrorDisplay } from '../ErrorDisplay/ErrorDisplay';
 
-import styles from './Form.module.scss';
+import styles from './RegisterForm.module.scss';
 
 type Props = {
   toggleModalHandler: () => void;
   showCloseButton?: boolean;
+  registrationRequestedHandler: Dispatch<SetStateAction<boolean>>;
 };
 
-const schema = z.object({
-  email: z.string().email(),
-  password: z.string().min(10)
-});
+const schema = z
+  .object({
+    email: z.string().email(),
+    password: z
+      .string()
+      .min(8, { message: 'Password must be at least 8 characters' })
+      .max(20, { message: 'Password must be cannot be larger then 6 characters' }),
+    confirmPassword: z.string().min(8).max(20)
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: 'Passwords does not match',
+    path: ['confirmPassword']
+  });
 
 const formConfig = {
   defaultValues: {
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   },
   resolver: zodResolver(schema)
 };
 
-export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
-  const { register, handleSubmit } = useForm(formConfig);
+export const RegisterForm = ({
+  toggleModalHandler,
+  showCloseButton = true,
+  registrationRequestedHandler
+}: Props) => {
+  const {
+    reset,
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm(formConfig);
+
+  console.log('errors: ', errors);
 
   const onSubmitHandler = (data: FieldValues) => {
-    console.log('submitted: ', data);
+    console.log('errors: ', errors);
+    console.log('Register: ', data);
   };
 
   return (
@@ -61,6 +86,7 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
               placeholder="Email"
               required
             />
+            <ErrorDisplay error={errors.email} />
           </div>
           <div className={styles.inputContainer}>
             <label className={styles.label} htmlFor="password">
@@ -75,12 +101,34 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
               placeholder="Password"
               required
             />
-            <a className={styles.link} href="https://www.google.pl">
-              Did you forget your password?
-            </a>
+            <ErrorDisplay error={errors.password} />
+          </div>
+          <div className={styles.inputContainer}>
+            <label className={styles.label} htmlFor="confirmPassword">
+              Confirm password:
+            </label>
+            <input
+              {...register('confirmPassword', {
+                required: true,
+                validate: (val: string) => {
+                  console.log('validating...');
+                  if (watch('password') !== val) {
+                    console.log('passwords doesnt match');
+                    return 'Your passwords do no match';
+                  }
+                }
+              })}
+              className={styles.input}
+              id="confirmPassword"
+              type="password"
+              name="confirmPassword"
+              placeholder="Repeat password"
+              required
+            />
+            <ErrorDisplay error={errors.confirmPassword} />
           </div>
           <button className={`${styles.button} ${styles.action}`} type={'submit'}>
-            Log in
+            Register
           </button>
         </form>
         <span className={styles.textSeparator}>OR</span>
@@ -92,11 +140,11 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
       <div className={styles.lineSeparator}></div>
       <footer className={styles.formFooter}>
         <p className={styles.textRegister}>
-          Not an user yet?{' '}
-          <a className={styles.link} href="#">
-            <span>Register</span>
-          </a>{' '}
-          your account now!
+          Do you have an account?{' '}
+          <span className={styles.span} onClick={() => registrationRequestedHandler(false)}>
+            Log in
+          </span>{' '}
+          here!
         </p>
         <p className={styles.textRegister}>
           You can find out more about our policy reading{' '}

@@ -1,21 +1,27 @@
-import { SyntheticEvent } from 'react';
+import { Dispatch, SetStateAction, SyntheticEvent } from 'react';
+import { FieldValues, useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import { FieldValues, useForm } from 'react-hook-form';
+
 import { NavLinkWrapper } from '../../NavLinkWrapper/NavLinkWrapper';
 import { TextEmoji } from '../../TextEmoji/TextEmoji';
 
-import styles from './Form.module.scss';
+import FacebookIcon from '@mui/icons-material/Facebook';
+
+import styles from './LoginForm.module.scss';
 
 type Props = {
   toggleModalHandler: () => void;
   showCloseButton?: boolean;
+  registrationRequestedHandler: Dispatch<SetStateAction<boolean>>;
 };
 
 const schema = z.object({
   email: z.string().email(),
-  password: z.string().min(10)
+  password: z
+    .string()
+    .min(8, { message: 'Password must be at least 8 characters' })
+    .max(20, { message: 'Password must be cannot be larger then 6 characters' })
 });
 
 const formConfig = {
@@ -26,11 +32,19 @@ const formConfig = {
   resolver: zodResolver(schema)
 };
 
-export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
-  const { register, handleSubmit } = useForm(formConfig);
+export const LoginForm = ({
+  toggleModalHandler,
+  showCloseButton = true,
+  registrationRequestedHandler
+}: Props) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm(formConfig);
 
   const onSubmitHandler = (data: FieldValues) => {
-    console.log('submitted: ', data);
+    console.log('login in: ', data);
   };
 
   return (
@@ -75,10 +89,10 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
               placeholder="Password"
               required
             />
-            <a className={styles.link} href="https://www.google.pl">
-              Did you forget your password?
-            </a>
           </div>
+          <a className={styles.link} href="https://www.google.pl">
+            Did you forget your password?
+          </a>
           <button className={`${styles.button} ${styles.action}`} type={'submit'}>
             Log in
           </button>
@@ -93,9 +107,9 @@ export const Form = ({ toggleModalHandler, showCloseButton = true }: Props) => {
       <footer className={styles.formFooter}>
         <p className={styles.textRegister}>
           Not an user yet?{' '}
-          <a className={styles.link} href="#">
-            <span>Register</span>
-          </a>{' '}
+          <span className={styles.span} onClick={() => registrationRequestedHandler(true)}>
+            Register
+          </span>{' '}
           your account now!
         </p>
         <p className={styles.textRegister}>
