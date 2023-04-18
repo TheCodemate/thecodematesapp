@@ -41,12 +41,14 @@ export const LoginForm = ({
 }: Props) => {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors }
   } = useForm(formConfig);
 
   const onSubmitHandler = (data: FieldValues) => {
     console.log('login in: ', data);
+    reset();
   };
 
   return (

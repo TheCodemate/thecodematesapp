@@ -60,6 +60,7 @@ export const RegisterForm = ({
   const onSubmitHandler = (data: FieldValues) => {
     console.log('errors: ', errors);
     console.log('Register: ', data);
+    reset();
   };
 
   return (
