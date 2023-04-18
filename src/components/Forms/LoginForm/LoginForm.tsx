@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, SyntheticEvent } from 'react';
-import { FieldValues, useForm } from 'react-hook-form';
 import * as z from 'zod';
+
+import { FieldValues, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { NavLinkWrapper } from '../../NavLinkWrapper/NavLinkWrapper';
@@ -9,6 +10,7 @@ import { TextEmoji } from '../../TextEmoji/TextEmoji';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
 import styles from './LoginForm.module.scss';
+import { ReactHookFormInput } from '../ReactHookFormInput/ReactHookFormInput';
 
 type Props = {
   toggleModalHandler: () => void;
@@ -21,7 +23,7 @@ const schema = z.object({
   password: z
     .string()
     .min(8, { message: 'Password must be at least 8 characters' })
-    .max(20, { message: 'Password must be cannot be larger then 6 characters' })
+    .max(20, { message: 'Password must contain less than 20 characters' })
 });
 
 const formConfig = {
@@ -62,37 +64,28 @@ export const LoginForm = ({
       </h3>
       <div className={styles.formWrapper}>
         <form className={styles.form} method="post" onSubmit={handleSubmit(onSubmitHandler)}>
-          <div className={styles.inputContainer}>
-            <label className={styles.label} htmlFor="email">
-              Email:
-            </label>
-            <input
-              {...register('email', { required: true })}
-              className={styles.input}
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div className={styles.inputContainer}>
-            <label className={styles.label} htmlFor="password">
-              Password:
-            </label>
-            <input
-              {...register('password', { required: true })}
-              className={styles.input}
-              id="password"
-              type="password"
-              name="password"
-              placeholder="Password"
-              required
-            />
-          </div>
-          <a className={styles.link} href="https://www.google.pl">
-            Did you forget your password?
-          </a>
+          <ReactHookFormInput
+            id="email"
+            isRequired={true}
+            label={'Email'}
+            name={'email'}
+            placeholder={'Insert email'}
+            register={register}
+            type={'email'}
+            errors={errors}
+            ariaError={'emailError'}
+          />
+          <ReactHookFormInput
+            id="password"
+            isRequired={true}
+            label={'Password'}
+            name={'password'}
+            placeholder={'Insert password'}
+            register={register}
+            type={'password'}
+            errors={errors}
+            ariaError={'passwordError'}
+          />
           <button className={`${styles.button} ${styles.action}`} type={'submit'}>
             Log in
           </button>

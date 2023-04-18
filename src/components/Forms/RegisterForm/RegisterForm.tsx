@@ -1,13 +1,17 @@
-import { Dispatch, SetStateAction, SyntheticEvent, useState } from 'react';
+import { Dispatch, SetStateAction, SyntheticEvent } from 'react';
+import FacebookIcon from '@mui/icons-material/Facebook';
+
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import { FieldValues, useForm } from 'react-hook-form';
+import { ErrorMessage } from '@hookform/error-message';
+import { FieldErrors, FieldValues, UseFormRegister, useForm } from 'react-hook-form';
+
 import { NavLinkWrapper } from '../../NavLinkWrapper/NavLinkWrapper';
 import { TextEmoji } from '../../TextEmoji/TextEmoji';
-import { ErrorDisplay } from '../ErrorDisplay/ErrorDisplay';
 
 import styles from './RegisterForm.module.scss';
+import { ErrorDisplay } from '../ErrorDisplay/ErrorDisplay';
+import { ReactHookFormInput } from '../ReactHookFormInput/ReactHookFormInput';
 
 type Props = {
   toggleModalHandler: () => void;
@@ -21,7 +25,7 @@ const schema = z
     password: z
       .string()
       .min(8, { message: 'Password must be at least 8 characters' })
-      .max(20, { message: 'Password must be cannot be larger then 6 characters' }),
+      .max(20, { message: 'Password must contain less than 20 characters' }),
     confirmPassword: z.string().min(8).max(20)
   })
   .refine((data) => data.password === data.confirmPassword, {
@@ -73,60 +77,39 @@ export const RegisterForm = ({
       </h3>
       <div className={styles.formWrapper}>
         <form className={styles.form} method="post" onSubmit={handleSubmit(onSubmitHandler)}>
-          <div className={styles.inputContainer}>
-            <label className={styles.label} htmlFor="email">
-              Email:
-            </label>
-            <input
-              {...register('email', { required: true })}
-              className={styles.input}
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
-            <ErrorDisplay error={errors.email} />
-          </div>
-          <div className={styles.inputContainer}>
-            <label className={styles.label} htmlFor="password">
-              Password:
-            </label>
-            <input
-              {...register('password', { required: true })}
-              className={styles.input}
-              id="password"
-              type="password"
-              name="password"
-              placeholder="Password"
-              required
-            />
-            <ErrorDisplay error={errors.password} />
-          </div>
-          <div className={styles.inputContainer}>
-            <label className={styles.label} htmlFor="confirmPassword">
-              Confirm password:
-            </label>
-            <input
-              {...register('confirmPassword', {
-                required: true,
-                validate: (val: string) => {
-                  console.log('validating...');
-                  if (watch('password') !== val) {
-                    console.log('passwords doesnt match');
-                    return 'Your passwords do no match';
-                  }
-                }
-              })}
-              className={styles.input}
-              id="confirmPassword"
-              type="password"
-              name="confirmPassword"
-              placeholder="Repeat password"
-              required
-            />
-            <ErrorDisplay error={errors.confirmPassword} />
-          </div>
+          <ReactHookFormInput
+            id="email"
+            isRequired={true}
+            label={'Email'}
+            name={'email'}
+            placeholder={'Insert email'}
+            register={register}
+            type={'email'}
+            errors={errors}
+            ariaError={'emailError'}
+          />
+          <ReactHookFormInput
+            id="password"
+            isRequired={true}
+            label={'Password'}
+            name={'password'}
+            placeholder={'Insert password'}
+            register={register}
+            type={'password'}
+            errors={errors}
+            ariaError={'passwordError'}
+          />
+          <ReactHookFormInput
+            id="confirmPassword"
+            isRequired={true}
+            label={'Confirm Password'}
+            name={'confirmPassword'}
+            placeholder={'Repeat password'}
+            register={register}
+            type={'password'}
+            errors={errors}
+            ariaError={'confirmPasswordError'}
+          />
           <button className={`${styles.button} ${styles.action}`} type={'submit'}>
             Register
           </button>
