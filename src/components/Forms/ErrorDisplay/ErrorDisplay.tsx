@@ -1,9 +1,14 @@
-import { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
+import styles from './ErrorDisplay.module.scss';
 
 type Props = {
-  error: FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined;
+  errorMessage: string;
+  ariaId: string;
 };
 
-export const ErrorDisplay = ({ error }: Props) => {
-  return error ? <p>{error.message?.toString()}</p> : null;
+export const ErrorDisplay = ({ errorMessage, ariaId }: Props) => {
+  return (
+    <span id={ariaId} className={styles.errorMessage}>
+      {errorMessage}
+    </span>
+  );
 };
