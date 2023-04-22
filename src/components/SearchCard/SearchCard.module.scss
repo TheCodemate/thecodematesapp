@@ -1,0 +1,48 @@
+.card {
+  background-color: var(--color-background-light);
+  height: 360px;
+  min-width: 320px;
+  max-width: 360px;
+
+  padding: var(--space-200);
+
+  border-radius: var(--border-radius-300);
+  box-shadow: var(--elevation-floating);
+
+  background-image: url('../../../assets/images/dog-small.jpg');
+  background-size: 300px;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  text-decoration: none;
+
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background-position: left center;
+    background-size: 360px;
+    transform: scale(1.1);
+  }
+}
+
+.navLink {
+  text-decoration: none;
+}
+
+.dogName {
+  font-size: var(--font-size-300);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  transition: all 0.5s ease-in-out;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.card:hover > .cardHeader {
+  opacity: 1;
+}
