@@ -1,0 +1,92 @@
+[
+  {
+    "id": "123456789",
+    "petName": "Rogalik",
+    "price": 95,
+    "imageUrl": [
+      "https://images.unsplash.com/photo-1568572933382-74d440642117?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3024&q=80"
+    ],
+    "location": {
+      "country": "Poland",
+      "countryCode": "pl",
+      "street": "Nowackiego",
+      "houseNumber": 12,
+      "postalCode": 30400
+    },
+    "characteristics": {
+      "sex": "male",
+      "age": 7,
+      "breed": "Tike",
+      "color": "black"
+    },
+    "owner": {
+      "firstName": "Peter",
+      "lastName": "Pizzaeater",
+      "contactDetails": {
+        "email": "peter.pizzaeater@pizza.com",
+        "phone": "+48 500 500 500"
+      },
+      "avatarUrl": "https://xsgames.co/randomusers/avatar.php?g=male"
+    }
+  },
+  {
+    "id": "5234wedgfwe4",
+    "petName": "Beza",
+    "price": 95,
+    "imageUrl": [
+      "https://images.unsplash.com/photo-1534351450181-ea9f78427fe8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+    ],
+    "location": {
+      "country": "Poland",
+      "countryCode": "pl",
+      "street": "Nowackiego",
+      "houseNumber": 12,
+      "postalCode": 30400
+    },
+    "characteristics": {
+      "sex": "male",
+      "age": 3,
+      "breed": "Tike",
+      "color": "black"
+    },
+    "owner": {
+      "firstName": "Peter",
+      "lastName": "Pizzaeater",
+      "contactDetails": {
+        "email": "peter.pizzaeater@pizza.com",
+        "phone": "+48 500 500 500"
+      },
+      "avatarUrl": "https://xsgames.co/randomusers/avatar.php?g=male"
+    }
+  },
+  {
+    "id": "fakjsdvhi09423",
+    "petName": "Kremówka",
+    "price": 95,
+    "imageUrl": [
+      "https://images.unsplash.com/photo-1625316708582-7c38734be31d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80"
+    ],
+    "location": {
+      "country": "Poland",
+      "countryCode": "pl",
+      "street": "Nowackiego",
+      "houseNumber": 12,
+      "postalCode": 30400
+    },
+    "characteristics": {
+      "sex": "male",
+      "age": 10,
+      "breed": "Tike",
+      "color": "black"
+    },
+    "owner": {
+      "firstName": "Peter",
+      "lastName": "Pizzaeater",
+      "contactDetails": {
+        "email": "peter.pizzaeater@pizza.com",
+        "phone": "+48 500 500 500"
+      },
+      "avatarUrl": "https://xsgames.co/randomusers/avatar.php?g=male"
+    }
+  }
+]
