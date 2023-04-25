@@ -1,9 +1,13 @@
 .main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: var(--space-600);
-  gap: var(--space-300);
-  flex-flow: row wrap;
+  padding: var(--space-400);
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: var(--space-300);
 }
