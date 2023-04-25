@@ -10,8 +10,8 @@ import { PetPage } from './pages/PetPage/PetPage';
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} />
+      <Route element={<Layout />}>
+        <Route index path="/" element={<Home />} />
         <Route path="terms-of-service" element={<TermsOfService />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="adopt">
