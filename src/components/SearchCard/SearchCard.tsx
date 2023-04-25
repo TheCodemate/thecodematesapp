@@ -1,18 +1,21 @@
 import { NavLink } from 'react-router-dom';
+import { LoveButton } from '../LoveButton/LoveButton';
+
+import { PetType } from '@/types';
+
 import styles from './SearchCard.module.scss';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 type Props = {
-  bgUrl: string;
+  pet: PetType;
 };
 
-export const SearchCard = ({ bgUrl }: Props) => {
+export const SearchCard = ({ pet }: Props) => {
   return (
-    <NavLink className={styles.navLink} to={'/adopt/1'}>
-      <div style={{ backgroundImage: bgUrl }} className={styles.card}>
+    <NavLink className={styles.navLink} to={`/adopt/${pet.id}`}>
+      <div style={{ backgroundImage: `url(${pet.imageUrl[0]})` }} className={styles.card}>
         <div className={styles.cardHeader}>
-          <p className={styles.dogName}>Dog Name</p>
-          <FavoriteBorderIcon fontSize="small" />
+          <p className={styles.dogName}>{pet.petName}</p>
+          <LoveButton />
         </div>
       </div>
     </NavLink>
