@@ -1,6 +1,6 @@
 import { PetsType } from '@/types';
 
-import styles from './SearchCardList.module.scss';
+import styles from './SearchCardsList.module.scss';
 import { SearchCard } from '../SearchCard/SearchCard';
 
 type Props = {
