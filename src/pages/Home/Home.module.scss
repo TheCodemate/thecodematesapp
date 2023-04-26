@@ -55,8 +55,13 @@
 
 .right {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.ctaLikeNavLink {
+  text-decoration: none;
 }
 
 .guidlinesWrapper {

@@ -4,6 +4,8 @@ import { useModalContext } from '@layouts/Layout/Layout';
 
 import styles from './Home.module.scss';
 import { FormLayout } from '@/components/Forms/FormLayout/FormLayout';
+import { NavLinkWrapper } from '@/components/NavLinkWrapper/NavLinkWrapper';
+import { Button } from '@/components/Button/Button';
 
 export const Home = () => {
   const {
@@ -24,6 +26,9 @@ export const Home = () => {
               There are hundreds <TextEmoji> 💯 </TextEmoji> of pets <TextEmoji>🐶🐱</TextEmoji>
               looking for their lovely home <TextEmoji>🏠❤️</TextEmoji>
             </h1>
+            <NavLinkWrapper type="cta" to="adopt">
+              <p>Adopt pet now!</p>
+            </NavLinkWrapper>
           </div>
         </div>
         <div className={styles.guidlinesWrapper}>
