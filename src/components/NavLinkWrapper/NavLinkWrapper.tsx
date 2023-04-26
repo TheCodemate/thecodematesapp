@@ -5,12 +5,13 @@ import styles from './NavLinkWrapper.module.scss';
 
 type Props = {
   to: string;
+  type?: 'default' | 'cta';
   children: ReactElement | ReactElement[];
 };
 
-export const NavLinkWrapper = ({ children, to }: Props) => {
+export const NavLinkWrapper = ({ type = 'default', children, to }: Props) => {
   return (
-    <NavLink className={styles.navLink} to={to}>
+    <NavLink className={styles[type]} to={to}>
       {children}
     </NavLink>
   );
