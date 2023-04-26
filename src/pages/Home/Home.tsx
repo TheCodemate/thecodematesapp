@@ -1,13 +1,17 @@
 import { ExpandMore } from '@mui/icons-material';
-import { LoginForm } from '@components/Forms/LoginForm/LoginForm';
-import { RegisterForm } from '@/components/Forms/RegisterForm/RegisterForm';
 import { TextEmoji } from '@components/TextEmoji/TextEmoji';
 import { useModalContext } from '@layouts/Layout/Layout';
 
 import styles from './Home.module.scss';
+import { FormLayout } from '@/components/Forms/FormLayout/FormLayout';
 
 export const Home = () => {
-  const { toggleModalHandler, isRegisterRequested, setIsRegisterRequested } = useModalContext();
+  const {
+    toggleModalHandler,
+    isRegisterRequested,
+    closeRegisterFormHandler,
+    openRegisterFormHandler
+  } = useModalContext();
   return (
     <main className={styles.content}>
       <section
@@ -61,19 +65,13 @@ export const Home = () => {
           <h2 id="fill-form-heading" className={styles.infoParagraph}>
             Fill the form and help them out!
           </h2>
-          {isRegisterRequested ? (
-            <RegisterForm
-              showCloseButton={false}
-              toggleModalHandler={toggleModalHandler}
-              registrationRequestedHandler={setIsRegisterRequested}
-            />
-          ) : (
-            <LoginForm
-              showCloseButton={false}
-              toggleModalHandler={toggleModalHandler}
-              registrationRequestedHandler={setIsRegisterRequested}
-            />
-          )}
+          <FormLayout
+            showCloseButton={false}
+            toggleModalHandler={toggleModalHandler}
+            closeRegisterFormHandler={closeRegisterFormHandler}
+            openRegisterFormHandler={openRegisterFormHandler}
+            isRegisterRequested={isRegisterRequested}
+          />
         </div>
       </section>
     </main>

@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { NavLinkWrapper } from '@/components/NavLinkWrapper/NavLinkWrapper';
 
 type Props = {
-  toggleModalHandler: () => void;
+  openRegisterFormHandler: () => void;
+  closeRegisterFormHandler: () => void;
 };
 
-export const MenuMobile = ({ toggleModalHandler }: Props) => {
+export const MenuMobile = ({ openRegisterFormHandler, closeRegisterFormHandler }: Props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const onClickHandler = () => {
@@ -32,10 +33,10 @@ export const MenuMobile = ({ toggleModalHandler }: Props) => {
             </li>
           </ul>
           <div className={styles.buttonContainer}>
-            <Button onClick={toggleModalHandler} variant={'action'}>
+            <Button onClick={closeRegisterFormHandler} variant={'action'}>
               Log in
             </Button>
-            <Button onClick={toggleModalHandler}>Sign up</Button>
+            <Button onClick={openRegisterFormHandler}>Sign up</Button>
           </div>
         </nav>
         <div className={styles.sidebarFooter}>
