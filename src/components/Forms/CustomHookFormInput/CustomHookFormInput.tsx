@@ -1,37 +1,33 @@
-import { ComponentProps } from 'react';
+import { ComponentProps, forwardRef } from 'react';
 import { ErrorMessage } from '@hookform/error-message';
 import { ErrorDisplay } from '../ErrorDisplay/ErrorDisplay';
-import { useFormContext } from 'react-hook-form';
 
 import styles from './CustomHookFormInput.module.scss';
 
 type Props = { name: string; label: string } & ComponentProps<'input'>;
 
-export const CustomHookFormInput = ({
-  placeholder,
-  id,
-  name,
-  label,
-  type = 'text',
-  required,
-  ...props
-}: Props) => {
-  const { register } = useFormContext();
+export const CustomHookFormInput = forwardRef<HTMLInputElement, Props>(
+  ({ placeholder, id, label, type = 'text', ...props }, ref) => {
+    return (
+      <div className={styles.inputContainer}>
+        <label className={styles.label} htmlFor={id}>
+          {`${label}:`}
+        </label>
+        <input
+          id={id}
+          className={styles.input}
+          type={type}
+          placeholder={placeholder}
+          ref={ref}
+          {...props}
+        />
+        <ErrorMessage
+          name={props.name}
+          render={({ message }) => <ErrorDisplay errorMessage={message} />}
+        />
+      </div>
+    );
+  }
+);
 
-  return (
-    <div className={styles.inputContainer}>
-      <label className={styles.label} htmlFor={id}>
-        {`${label}:`}
-      </label>
-      <input
-        {...register(name, { required: required })}
-        className={styles.input}
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        {...props}
-      />
-      <ErrorMessage name={name} render={({ message }) => <ErrorDisplay errorMessage={message} />} />
-    </div>
-  );
-};
+CustomHookFormInput.displayName = 'CustomHookFormInput';
