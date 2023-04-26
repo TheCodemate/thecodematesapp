@@ -4,9 +4,9 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { TextEmoji } from '@/components/TextEmoji/TextEmoji';
 import { NavLinkWrapper } from '@/components/NavLinkWrapper/NavLinkWrapper';
 
-import styles from './FormLayout.module.scss';
 import { RegisterForm } from '../RegisterForm/RegisterForm';
 import { LoginForm } from '../LoginForm/LoginForm';
+import styles from './FormLayout.module.scss';
 
 type Props = {
   toggleModalHandler: () => void;
@@ -49,17 +49,17 @@ export const FormLayout = ({
         {isRegisterRequested ? (
           <p className={styles.textRegister}>
             Are you an user?{' '}
-            <span className={styles.span} onClick={closeRegisterFormHandler}>
+            <button className={styles.changeFormText} onClick={closeRegisterFormHandler}>
               Log in
-            </span>{' '}
+            </button>{' '}
             here!
           </p>
         ) : (
           <p className={styles.textRegister}>
             Not an user yet?{' '}
-            <span className={styles.span} onClick={openRegisterFormHandler}>
+            <button className={styles.changeFormText} onClick={openRegisterFormHandler}>
               Register
-            </span>{' '}
+            </button>{' '}
             your account now!
           </p>
         )}

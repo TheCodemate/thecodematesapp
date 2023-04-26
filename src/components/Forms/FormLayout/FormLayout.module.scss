@@ -151,8 +151,17 @@
   margin-bottom: 0;
 }
 
-.span {
+.changeFormText {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+
   font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-100);
 
   cursor: pointer;
+}
+
+.span {
+  font-weight: var(--font-weight-bold);
 }
