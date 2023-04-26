@@ -1,4 +1,4 @@
-import { FieldValues, useForm } from 'react-hook-form';
+import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -23,31 +23,35 @@ const formConfig = {
 };
 
 export const LoginForm = () => {
-  const { reset, handleSubmit, register } = useForm(formConfig);
+  const methods = useForm(formConfig);
+  const { reset, handleSubmit, register } = methods;
+
   const onSubmitHandler = (data: FieldValues) => {
     console.log('login in: ', data);
     reset();
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmitHandler)}>
-      <CustomHookFormInput
-        {...register('email')}
-        id="email"
-        required
-        label={'Email'}
-        placeholder={'Insert your email here...'}
-        type={'email'}
-      />
-      <CustomHookFormInput
-        {...register('password')}
-        id="password"
-        required
-        label={'Password'}
-        placeholder={'Insert password'}
-        type={'password'}
-      />
-      <button className={`${styles.button} ${styles.action}`}>Log in</button>
-    </form>
+    <FormProvider {...methods}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmitHandler)}>
+        <CustomHookFormInput
+          {...register('email')}
+          id="email"
+          required
+          label={'Email'}
+          placeholder={'Insert your email here...'}
+          type={'email'}
+        />
+        <CustomHookFormInput
+          {...register('password')}
+          id="password"
+          required
+          label={'Password'}
+          placeholder={'Insert password'}
+          type={'password'}
+        />
+        <button className={`${styles.button} ${styles.action}`}>Log in</button>
+      </form>
+    </FormProvider>
   );
 };
