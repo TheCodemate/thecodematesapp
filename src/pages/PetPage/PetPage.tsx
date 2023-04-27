@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import dog from '../../../assets/images/dog1.jpg';
+import dog from '../../assets/images/dog-small.jpg';
 
 import { IconButton } from '@mui/material';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
