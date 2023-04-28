@@ -1,0 +1,8 @@
+.navLink {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:visited {
+    color: inherit;
+  }
+}

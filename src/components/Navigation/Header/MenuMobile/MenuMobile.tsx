@@ -1,6 +1,7 @@
 import { Button } from '@components/Button/Button';
 import styles from './MenuMobile.module.scss';
 import { useState } from 'react';
+import { NavLinkWrapper } from '@/components/NavLinkWrapper/NavLinkWrapper';
 
 type Props = {
   toggleModalHandler: () => void;
@@ -38,12 +39,12 @@ export const MenuMobile = ({ toggleModalHandler }: Props) => {
           </div>
         </nav>
         <div className={styles.sidebarFooter}>
-          <a className={styles.footerLink} href="https://www.google.pl">
-            Terms of Service
-          </a>
-          <a className={styles.footerLink} href="https://www.google.pl">
-            Privacy Policy
-          </a>
+          <NavLinkWrapper to={'/terms-of-service'}>
+            <span className={styles.footerLink}>Terms of service</span>
+          </NavLinkWrapper>{' '}
+          <NavLinkWrapper to={'/privacy-policy'}>
+            <span className={styles.footerLink}>Privacy Policy</span>
+          </NavLinkWrapper>{' '}
           <a className={styles.footerLink} href="https://www.google.pl">
             Contact
           </a>
