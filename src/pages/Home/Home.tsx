@@ -1,14 +1,17 @@
 import { ExpandMore } from '@mui/icons-material';
-import { Form } from '@components/Form/Form';
 import { TextEmoji } from '@components/TextEmoji/TextEmoji';
 import { useModalContext } from '@layouts/Layout/Layout';
 
-import dog from '@assets/images/dog-small.jpg';
-
 import styles from './Home.module.scss';
+import { FormLayout } from '@/components/Forms/FormLayout/FormLayout';
 
 export const Home = () => {
-  const { toggleModalHandler } = useModalContext();
+  const {
+    toggleModalHandler,
+    isRegisterRequested,
+    closeRegisterFormHandler,
+    openRegisterFormHandler
+  } = useModalContext();
   return (
     <main className={styles.content}>
       <section
@@ -62,7 +65,13 @@ export const Home = () => {
           <h2 id="fill-form-heading" className={styles.infoParagraph}>
             Fill the form and help them out!
           </h2>
-          <Form showCloseButton={false} toggleModalHandler={toggleModalHandler} />
+          <FormLayout
+            showCloseButton={false}
+            toggleModalHandler={toggleModalHandler}
+            closeRegisterFormHandler={closeRegisterFormHandler}
+            openRegisterFormHandler={openRegisterFormHandler}
+            isRegisterRequested={isRegisterRequested}
+          />
         </div>
       </section>
     </main>

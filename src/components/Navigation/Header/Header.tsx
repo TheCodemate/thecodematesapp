@@ -4,15 +4,17 @@ import { MenuMobile } from './MenuMobile/MenuMobile';
 import styles from './Header.module.scss';
 
 type Props = {
+  openRegisterFormHandler: () => void;
+  closeRegisterFormHandler: () => void;
   toggleModalHandler: () => void;
 };
 
-export const Header = ({ toggleModalHandler }: Props) => {
+export const Header = ({ ...props }: Props) => {
   return (
     <div className={styles.container}>
       <Logo />
-      <MenuDesktop toggleModalHandler={toggleModalHandler} />
-      <MenuMobile toggleModalHandler={toggleModalHandler} />
+      <MenuDesktop {...props} />
+      <MenuMobile {...props} />
     </div>
   );
 };
