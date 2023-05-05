@@ -9,6 +9,7 @@
     "location": {
       "country": "Poland",
       "countryCode": "pl",
+      "city": "Kraków",
       "street": "Nowackiego",
       "houseNumber": 12,
       "postalCode": 30400
@@ -39,6 +40,7 @@
     "location": {
       "country": "Poland",
       "countryCode": "pl",
+      "city": "Warszawa",
       "street": "Nowackiego",
       "houseNumber": 12,
       "postalCode": 30400
@@ -67,8 +69,9 @@
       "https://images.unsplash.com/photo-1625316708582-7c38734be31d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80"
     ],
     "location": {
-      "country": "Poland",
-      "countryCode": "pl",
+      "country": "England",
+      "countryCode": "en",
+      "city": "London",
       "street": "Nowackiego",
       "houseNumber": 12,
       "postalCode": 30400

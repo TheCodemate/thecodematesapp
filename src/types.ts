@@ -3,6 +3,7 @@ import { z } from 'zod';
 const LocationSchema = z.object({
   country: z.string(),
   countryCode: z.string().max(3, { message: 'Country code cannot be longer than 3 chars' }),
+  city: z.string(),
   street: z.string(),
   houseNumber: z.number(),
   postalCode: z.number()
