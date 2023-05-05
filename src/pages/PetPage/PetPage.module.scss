@@ -1,0 +1,188 @@
+@use '../../styles' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color);
+  min-width: 320px;
+
+  @include breakpoint(small) {
+    flex-direction: row;
+    height: calc(100vh - var(--footer-height) - var(--header-height));
+  }
+}
+
+.imagesContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(small) {
+    flex: 1;
+    flex-direction: row;
+  }
+}
+
+.navContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--space-300);
+}
+
+.backButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: var(--space-300);
+
+  @include breakpoint(small) {
+    flex: 1;
+    padding: var(--space-500);
+  }
+}
+.petDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+  margin-bottom: var(--space-300);
+}
+.basicDetails {
+  display: flex;
+  justify-content: space-between;
+}
+.leftSide {
+  display: flex;
+  flex-direction: column;
+}
+.petName {
+  margin-bottom: var(--space-100);
+  font-size: var(--font-size-500);
+  font-weight: (--font-weight-semibold);
+}
+.locationContainer {
+  display: flex;
+  align-items: center;
+}
+.locationIcon {
+  font-size: var(--font-size-200);
+  color: var(--color-background-brand);
+}
+.location {
+  font-size: var(--font-size-200);
+  color: var(--color-background-secondary-strong);
+}
+
+.rightSide {
+}
+
+.price {
+  font-size: var(--font-size-500);
+}
+.characteristicsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-200);
+}
+.characteristic {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
+  min-height: 4rem;
+  max-width: 8rem;
+  border: 1px solid var(--color-background-secondary-weak);
+  border-radius: 0.5rem;
+  padding: var(--space-200);
+}
+.char {
+  font-size: calc(var(--font-size-200));
+  margin-bottom: var(--space-100);
+  color: var(--color-red-pushpin-300);
+}
+.charTitle {
+  font-size: var(--font-size-100);
+  color: var(--color-text-subtle);
+}
+.ownerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.ownerInfo {
+  display: flex;
+  align-items: center;
+}
+
+.ownerDescription {
+  display: flex;
+  flex-direction: column;
+}
+.ownedBySpan {
+  font-size: var(--font-size-100);
+  color: var(--color-background-secondary-weak);
+  margin-bottom: var(--space-100);
+}
+.ownerName {
+  font-size: var(--font-size-300);
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+  color: var(--color-background-light);
+}
+.contactButton {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  background-color: var(--color-background-brand);
+  padding: var(--space-200);
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+.contentBody {
+  margin-bottom: var(--space-300);
+}
+.contentFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

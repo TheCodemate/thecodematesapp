@@ -1,8 +1,47 @@
-.navLink {
+.default {
   text-decoration: none;
   cursor: pointer;
 
   &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  min-width: 60px;
+  flex-wrap: nowrap;
+  border-radius: var(--border-radius-button);
+  padding: var(--space-200) var(--space-300);
+
+  border: var(--color-border-secondary);
+  background-color: var(--color-background-primary-base);
+  color: var(--color-text-light);
+
+  font-size: var(--font-size-300);
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.5s ease;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-button-bg-action-hover);
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+
+  & p {
     color: inherit;
   }
 }
