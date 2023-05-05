@@ -1,16 +1,19 @@
 import { ExpandMore } from '@mui/icons-material';
-import { Form } from '@components/Form/Form';
 import { TextEmoji } from '@components/TextEmoji/TextEmoji';
-import { Footer } from '@layouts/Navigation/Footer/Footer';
-
-import dog from '@assets/images/dog-small.jpg';
+import { useModalContext } from '@layouts/Layout/Layout';
 
 import styles from './Home.module.scss';
-type Props = {
-  toggleModalHandler: () => void;
-};
+import { FormLayout } from '@/components/Forms/FormLayout/FormLayout';
+import { NavLinkWrapper } from '@/components/NavLinkWrapper/NavLinkWrapper';
+import { Button } from '@/components/Button/Button';
 
-export const Home = ({ toggleModalHandler }: Props) => {
+export const Home = () => {
+  const {
+    toggleModalHandler,
+    isRegisterRequested,
+    closeRegisterFormHandler,
+    openRegisterFormHandler
+  } = useModalContext();
   return (
     <main className={styles.content}>
       <section
@@ -23,6 +26,9 @@ export const Home = ({ toggleModalHandler }: Props) => {
               There are hundreds <TextEmoji> 💯 </TextEmoji> of pets <TextEmoji>🐶🐱</TextEmoji>
               looking for their lovely home <TextEmoji>🏠❤️</TextEmoji>
             </h1>
+            <NavLinkWrapper type="cta" to="adopt">
+              <p>Adopt pet now!</p>
+            </NavLinkWrapper>
           </div>
         </div>
         <div className={styles.guidlinesWrapper}>
@@ -64,9 +70,14 @@ export const Home = ({ toggleModalHandler }: Props) => {
           <h2 id="fill-form-heading" className={styles.infoParagraph}>
             Fill the form and help them out!
           </h2>
-          <Form showCloseButton={false} toggleModalHandler={toggleModalHandler} />
+          <FormLayout
+            showCloseButton={false}
+            toggleModalHandler={toggleModalHandler}
+            closeRegisterFormHandler={closeRegisterFormHandler}
+            openRegisterFormHandler={openRegisterFormHandler}
+            isRegisterRequested={isRegisterRequested}
+          />
         </div>
-        <Footer />
       </section>
     </main>
   );

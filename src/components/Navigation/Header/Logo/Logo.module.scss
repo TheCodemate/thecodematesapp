@@ -1,0 +1,8 @@
+@use '../../../../styles/mixins' as *;
+
+.logo {
+  font-family: var(--font-family-logo);
+  font-size: var(--font-size-400);
+  color: var(--color-text-logo);
+  white-space: nowrap;
+}

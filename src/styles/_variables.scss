@@ -48,6 +48,8 @@
   --font-weight-semibold: 600;
   --font-weight-normal: 400;
 
+  --font-size-error: 0.7rem;
+
   --font-size-600: 2.25rem; //36px;
   --font-size-500: 1.75rem; //28px;
   --font-size-400: 1.25rem; //20px;
@@ -116,6 +118,8 @@
   --elevation-raised-bottom: 0 -2px 8px rgba(0, 0, 0, 0.12);
   --elevation-raised-top: 0 2px 8px rgba(0, 0, 0, 0.12);
   --elevation-floating: 0 0 8px rgba(0, 0, 0, 0.1);
+
+  --card-elevation-floating: 0 0 10px 10px rgba(0, 0, 0, 0.12);
 
   --transition-default: all 0.5s ease;
 
