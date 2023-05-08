@@ -94,11 +94,7 @@ export const PetPage = () => {
             </div>
           </div>
         </div>
-        <div className={styles.contentBody}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laudantium accusantium
-          eaque ex repellendus, mollitia dolorum ea, quidem optio provident, neque esse?
-          Exercitationem recusandae voluptatibus reprehenderit consequatur dolor quas id?
-        </div>
+        <div className={styles.contentBody}>{currentAnnouncement.description}</div>
         <div className={styles.contentFooter}>
           <Button variant="action">Adopt me!</Button>
         </div>

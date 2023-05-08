@@ -37,6 +37,9 @@ export const MenuMobile = ({ openRegisterFormHandler, closeRegisterFormHandler }
               Log in
             </Button>
             <Button onClick={openRegisterFormHandler}>Sign up</Button>
+            <NavLinkWrapper type="cta" to={'adopt/add-new'}>
+              <span>Add Announcement</span>
+            </NavLinkWrapper>
           </div>
         </nav>
         <div className={styles.sidebarFooter}>
