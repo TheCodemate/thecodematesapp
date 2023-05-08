@@ -1,4 +1,6 @@
 import { Button } from '@components/Button/Button';
+import { NavLinkWrapper } from '@/components/NavLinkWrapper/NavLinkWrapper';
+
 import styles from './MenuDesktop.module.scss';
 
 type Props = {
@@ -34,10 +36,11 @@ export const MenuDesktop = ({
         </li>
       </ul>
       <div className={styles.buttonContainer}>
-        <Button onClick={handleLoginOnClick} variant={'action'}>
-          Log in
-        </Button>
+        <Button onClick={handleLoginOnClick}>Log in</Button>
         <Button onClick={handleRegisterOnClick}>Sign up</Button>
+        <NavLinkWrapper type="cta" to={'adopt/add-new'}>
+          <span>Add Announcement</span>
+        </NavLinkWrapper>
       </div>
     </nav>
   );
