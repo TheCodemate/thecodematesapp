@@ -1,0 +1,71 @@
+@use '../../styles/' as *;
+
+.container {
+  padding: var(--space-300);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-100);
+  padding: var(--space-300);
+  min-width: 340px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.submitButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  min-width: 60px;
+  flex-wrap: nowrap;
+  border-radius: var(--border-radius-button);
+  padding: var(--space-200) var(--space-300);
+  border: var(--color-border-secondary);
+  background-color: var(--color-background-primary-base);
+  color: var(--color-text-light);
+
+  font-size: var(--font-size-300);
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.5s ease;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-button-bg-action-hover);
+  }
+}
+
+.textArea {
+  grid-column: 1/-1;
+  height: 200px;
+}
+
+@include breakpoint(small) {
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .buttonContainer {
+    grid-column: span 2;
+  }
+
+  .gridColSpan2 {
+    grid-column: span 2;
+  }
+}
+@include breakpoint(medium) {
+  .formGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .buttonContainer {
+    grid-column: span 4;
+  }
+}
