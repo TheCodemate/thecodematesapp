@@ -17,7 +17,11 @@ const initialState: InitialStateType = {
 const announcementsSlice = createSlice({
   name: 'announcements',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    addNewAnnouncement: (state, action) => {
+      state.announcements.push(action.payload);
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchAnnouncements.pending, (state) => {
       state.isLoading = true;
@@ -33,5 +37,5 @@ const announcementsSlice = createSlice({
   }
 });
 
-export const {} = announcementsSlice.actions;
+export const { addNewAnnouncement } = announcementsSlice.actions;
 export default announcementsSlice;
